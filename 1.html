@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        aside {
+            text-align: center;
+            background-color: aquamarine;
+            margin-left: 700px;
+            margin-right: 0%;
+        }
+        p {
+            text-align: center;
+            font-style: italic;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <h1>Llista dels nostres guanyadors del día:"</h1>
+    </main>
+    <aside>
+        <form name="formulari_guanyadors">
+            <fieldset>
+                <label>Nom:</label>
+                <input maxlength="30" id="nom" value="" name="nombre" type="text" autofocus placeholder="Escriu el teu Nom" />
+
+                <label>Direcció:</label>
+                <input maxlength="50" id="direccio" value="" name="direccio" type="text" autofocus placeholder="C/balbas, 32" />
+    
+                <label>Població: </label>
+                <input name="poblacio" id="poblacio" value="" placeholder="Palma" />
+
+            <button type="button" onclick="afegir_nom()">Enviar</button>
+            </fieldset>
+        </form>
+    </aside>
+
+    <script>
+        function afegir_nom() {
+            var nom = document.getElementById("nom").value;
+
+            // Crear nodo de tipo Element
+            var paragraf = document.createElement("p");
+
+            // Crear nodo de tipo Text
+            var contingut = document.createTextNode(nom);
+
+            paragraf.appendChild(contingut);
+
+            var main = document.getElementById("main");
+
+            main.appendChild(paragraf);
+        }
+    </script>
+        
+</body>
+</html>

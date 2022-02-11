@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="formulari_guanyadors">
+        <fieldset>
+            <label>Nom:</label>
+            <input maxlength="30" id="nom" value="" name="nombre" type="text" autofocus
+                placeholder="Escriu el teu Nom" />
+
+            <label>Nota primera avaluació:</label>
+            <input name="nota1" id="nota1" value="" required type="number" placeholder="XX" />
+
+            <label>Nota segona avaluació:</label>
+            <input name="nota2" id="nota2" value="" required type="number" placeholder="XX" />
+
+            <button type="button" onclick="calcular_nota()">Enviar</button>
+        </fieldset>
+    </form>
+    <script>
+        function calcular_nota() {
+            var nota1 = document.getElementById("nota1").value;
+            var nota2 = document.getElementById("nota2").value;
+
+            var nota_final = (parseFloat(nota1) + parseFloat(nota2))/2;
+            //alert(nota_final.toFixed(2));
+            // Crear nodo de tipo Element
+            var paragraf = document.createElement("p");
+
+            // Crear nodo de tipo Text
+            var contingut = document.createTextNode("La nota final es: " + nota_final.toFixed(2));
+
+            paragraf.appendChild(contingut);
+
+            document.body.appendChild(paragraf);
+        }
+    </script>
+</body>
+
+</html>
