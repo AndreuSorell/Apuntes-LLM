@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulari</title>
+</head>
+<body>
+    <header>
+        <h1>Els nostres usuaris són esportistes</h1>
+    </header>
+    <form name="formulari_esportistes">
+        <fieldset>
+            <label>Nom:</label>
+            <input maxlength="30" id="nom" value="" name="nombre" type="text" autofocus placeholder="Escriu el teu nom d'usuari" required />
+
+            <label>edat:</label>
+            <input name="edat" id="edat" value="" pattern="[0-9]{2}" min="02" max="99" required type="number" placeholder="XX" />
+
+            <label>Esport:</label>
+            <input maxlength="50" id="esport" value="" name="esport" type="text" autofocus placeholder="Escriu l'esport que practiques" required />
+
+            <label>Color de la camiseta del teu club esportiu</label>
+            <input name="Color de la camiseta" id="color" value="" placeholder="Indica el color" required />
+
+            <label>Desde quan practiques l'esport?</label>
+            <input name="data inici esport" id="data" value="" type="date" required placeholder="XX/XX/XXXX" />
+
+        <button type="button" onclick="crear_seccio()">Enviar</button>
+        </fieldset>
+    </form>
+    <script>
+        function crear_seccio() {
+            var nom = document.getElementById("nom").value;
+            var edat = document.getElementById("edat").value;
+            var esport = document.getElementById("esport").value;
+            var color_camiseta = document.getElementById("color").value;
+            var data = document.getElementById("data").value;
+
+            // Crear nodo de tipo Element
+            var seccio = document.createElement("section");
+            var h4 = document.createElement("h4");
+            var ul = document.createElement("ul");
+            var lis = document.createElement("li");
+
+            // Crear nodo de tipo Text
+            var titul = document.createTextNode(esport);
+            var contingut = document.createTextNode(nom + ", " + edat + " anys, color camiseta " + color_camiseta + ", " + data);
+
+            lis.appendChild(contingut);
+            ul.appendChild(lis);
+            h4.appendChild(titul);
+            seccio.appendChild(h4);
+            seccio.appendChild(ul);
+
+            document.body.appendChild(seccio);
+        }
+    </script>
+</body>
+</html>

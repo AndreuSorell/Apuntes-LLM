@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color fons i imgs</title>
+    <style>
+        h1 {
+            text-align: center;
+            color: violet;
+        }
+        main {
+            width: auto;
+            height: 500px;
+            margin: 30px;
+            border: solid 5px blue;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Canvia el color del fons</h1>
+    </header>
+    <main>
+        <img src="imgs/cerclemarro.png" alt="brown" height="150" width="150" onmouseover="color_fons('brown')" onmouseleave="fons_blanc()">
+        <img src="imgs/cercleblau.png" alt="blue" height="150" width="150" onmouseover="color_fons('blue')" onmouseleave="fons_blanc()">
+        <img src="imgs/cercletaronja.png" alt="orange" height="150" width="150" onmouseover="color_fons('orange')" onmouseleave="fons_blanc()">
+        <img src="imgs/cerclevermell.png" alt="red" height="150" width="150" onmouseover="color_fons('red')" onmouseleave="fons_blanc()">
+        <img src="imgs/cercleverd.png" alt="green" height="150" width="150" onmouseover="color_fons('green')" onmouseleave="fons_blanc()">
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
